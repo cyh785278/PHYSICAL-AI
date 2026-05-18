@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="community.css">
+    <script src="i18n.js" defer></script>
     <style>
         #toast {
             visibility: hidden; min-width: 260px; margin-left: -130px;
@@ -46,7 +47,7 @@
 
     <header id="main-nav">
         <div class="container">
-            <a href="index.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none;"><div class="logo glitch" data-text="PHYSICAL AI">PHYSICAL AI</div></a>
+            <a href="index.html" style="text-decoration: none;"><div class="logo glitch" data-text="PHYSICAL AI">PHYSICAL AI</div></a>
             
             <div class="menu-toggle" id="mobile-menu">
                 <span></span>
@@ -55,11 +56,16 @@
             </div>
 
             <ul class="nav-links" id="nav-list">
-                <li><a href="index.html" target="_blank" rel="noopener noreferrer">Home</a></li>
-                <li><a href="index.html#products" target="_blank" rel="noopener noreferrer">Products</a></li>
-                <li><a href="index.html#technology" target="_blank" rel="noopener noreferrer">Technology</a></li>
-                <li><a href="community.html" class="active">Community</a></li>
-                <li><a href="index.html#company" target="_blank" rel="noopener noreferrer">Company</a></li>
+                <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                <li><a href="index.html#products" data-i18n="nav-products">Products</a></li>
+                <li><a href="index.html#technology" data-i18n="nav-technology">Technology</a></li>
+                <li><a href="community.html" class="active" data-i18n="nav-community">Community</a></li>
+                <li><a href="index.html#company" data-i18n="nav-company">Company</a></li>
+                <li class="lang-switch">
+                    <button id="lang-ko" class="lang-btn active">KO</button>
+                    <span class="divider">|</span>
+                    <button id="lang-en" class="lang-btn">EN</button>
+                </li>
             </ul>
         </div>
     </header>
@@ -67,30 +73,30 @@
     <main class="container page-margin">
         <section class="board-header">
             <div class="tab-menu">
-                <button class="tab-btn active" data-tab="notice">Notice & News</button>
-                <button class="tab-btn" data-tab="blog">Tech Blog</button>
-                <button class="tab-btn" data-tab="qa">Customer Q&A</button>
-                <button class="tab-btn" data-tab="free">자유게시판</button>
+                <button class="tab-btn active" data-tab="notice" data-i18n="board-tab-notice">Notice & News</button>
+                <button class="tab-btn" data-tab="blog" data-i18n="board-tab-blog">Tech Blog</button>
+                <button class="tab-btn" data-tab="qa" data-i18n="board-tab-qa">Customer Q&A</button>
+                <button class="tab-btn" data-tab="free" data-i18n="board-tab-free">자유게시판</button>
             </div>
         </section>
 
         <div class="board-controls">
             <div class="search-box">
-                <input type="text" id="board-search" placeholder="글 제목, 작성자 검색...">
+                <input type="text" id="board-search" placeholder="글 제목, 작성자 검색..." data-i18n="search-placeholder">
             </div>
-            <button class="btn-write" id="btn-open-write">글쓰기</button>
+            <button class="btn-write" id="btn-open-write" data-i18n="btn-write">글쓰기</button>
         </div>
 
         <div id="board-container">
             <table class="board-table">
                 <thead>
                     <tr>
-                        <th style="width:70px;">번호</th>
-                        <th>제목</th>
-                        <th style="width:140px;">작성자</th>
-                        <th style="width:130px;">날짜</th>
-                        <th style="width:100px;">상태</th>
-                        <th style="width:150px;">관리</th>
+                        <th style="width:70px;" data-i18n="table-num">번호</th>
+                        <th data-i18n="table-title">제목</th>
+                        <th style="width:140px;" data-i18n="table-author">작성자</th>
+                        <th style="width:130px;" data-i18n="table-date">날짜</th>
+                        <th style="width:100px;" data-i18n="table-status">상태</th>
+                        <th style="width:150px;" data-i18n="table-manage">관리</th>
                     </tr>
                 </thead>
                 <tbody id="board-list">
@@ -110,19 +116,19 @@
                     <option value="qa">Q&A</option>
                     <option value="free">자유게시판</option>
                 </select>
-                <input type="text" id="post-title" placeholder="제목" required>
-                <input type="text" id="post-author" placeholder="작성자" required>
-                <textarea id="post-content" placeholder="내용을 입력하세요..." rows="10" required></textarea>
+                <input type="text" id="post-title" placeholder="제목" required data-i18n="placeholder-title">
+                <input type="text" id="post-author" placeholder="작성자" required data-i18n="placeholder-author">
+                <textarea id="post-content" placeholder="내용을 입력하세요..." rows="10" required data-i18n="placeholder-content"></textarea>
                 <div style="background:#f8f9fa; padding:1.2rem; border-radius:12px; margin:1rem 0; border:1px solid #eee;">
-                    <label style="display:block; margin-bottom:0.5rem; font-size:0.85rem; color:#5b6e8e; font-weight:600;">수정용 비밀번호 (필수)</label>
+                    <label style="display:block; margin-bottom:0.5rem; font-size:0.85rem; color:#5b6e8e; font-weight:600;" data-i18n="label-password">수정용 비밀번호 (필수)</label>
                     <input type="password" id="post-password" placeholder="비밀번호" required style="width:100%; border:1px solid #ddd; padding:0.9rem; border-radius:8px;">
                     <label style="display:flex; align-items:center; gap:0.6rem; margin-top:1rem; font-size:0.9rem; cursor:pointer; color:#0a1f44;">
-                        <input type="checkbox" id="post-is-secret"> 비밀글로 설정하기
+                        <input type="checkbox" id="post-is-secret"> <span data-i18n="label-secret">비밀글로 설정하기</span>
                     </label>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-cancel" id="btn-close-write">취소</button>
-                    <button type="submit" class="btn-submit" id="btn-submit-post">등록하기</button>
+                    <button type="button" class="btn-cancel" id="btn-close-write" data-i18n="btn-cancel">취소</button>
+                    <button type="submit" class="btn-submit" id="btn-submit-post" data-i18n="btn-submit">등록하기</button>
                 </div>
             </form>
         </div>
@@ -131,7 +137,7 @@
     <!-- Enhanced Real-Time Logic -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, where, serverTimestamp, updateDoc, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, where, serverTimestamp, updateDoc, doc, deleteDoc, enableIndexedDbPersistence } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyDpgmIpooAtWh6yfeZqjDHspWmleZEsHAI",
@@ -143,6 +149,15 @@
         };
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
+
+        // --- Enable Offline Persistence ---
+        enableIndexedDbPersistence(db).catch((err) => {
+            if (err.code == 'failed-precondition') {
+                console.warn("Persistence failed: multiple tabs open");
+            } else if (err.code == 'unimplemented') {
+                console.warn("Persistence not supported by browser");
+            }
+        });
 
         const boardList = document.getElementById('board-list');
         const writeModal = document.getElementById('write-modal');
@@ -162,7 +177,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
 
-        let currentTab = 'notice';
+        let currentTab = localStorage.getItem('lastBoardTab') || 'free';
         let editingId = null;
         let unsubscribe = null;
 
@@ -182,40 +197,67 @@
         function syncBoard(category) {
             if (unsubscribe) unsubscribe();
 
-            boardList.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:3rem; color:#aaa;">연결 중...</td></tr>';
+            boardList.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:3rem; color:#aaa;">${window.i18n.t('loading')}</td></tr>`;
             
-            const q = query(collection(db, "posts"), where("category", "==", category), orderBy("createdAt", "desc"));
+            // Note: Removed orderBy("createdAt", "desc") to avoid composite index requirement.
+            // We sort client-side in the snapshot handler.
+            const q = query(collection(db, "posts"), where("category", "==", category));
             
             unsubscribe = onSnapshot(q, (snap) => {
-                boardList.innerHTML = '';
-                if (snap.empty) {
-                    boardList.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:4rem; color:#bbb;">아직 등록된 게시글이 없습니다.</td></tr>`;
-                    return;
-                }
+                const posts = snap.docs.map(d => ({ id: d.id, ...d.data() }));
                 
-                let idx = snap.size;
-                snap.forEach(d => {
-                    const data = d.data();
-                    const tr = document.createElement('tr');
-                    const dateStr = data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : '방금 전';
+                // Super Persistence: Cache results locally
+                localStorage.setItem(`cache_${category}`, JSON.stringify(posts));
+                
+                renderPosts(posts, category);
+            }, (error) => {
+                console.warn("Real-time sync failed, loading from cache...", error);
+                const cached = localStorage.getItem(`cache_${category}`);
+                if (cached) {
+                    renderPosts(JSON.parse(cached), category);
+                } else {
+                    boardList.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:3rem; color:#ff3e00;">Error: ${error.message}</td></tr>`;
+                }
+            });
+        }
+
+        // --- Dedicated Render Function ---
+        function renderPosts(posts, category) {
+            boardList.innerHTML = '';
+            if (!posts || posts.length === 0) {
+                boardList.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:4rem; color:#bbb;">${window.i18n.t('no-posts')}</td></tr>`;
+                return;
+            }
+
+            // Sort by date manually (descending)
+            const sorted = [...posts].sort((a, b) => {
+                const timeA = a.createdAt?.seconds || 0;
+                const timeB = b.createdAt?.seconds || 0;
+                return timeB - timeA;
+            });
+
+            let idx = sorted.length;
+            sorted.forEach(data => {
+                const tr = document.createElement('tr');
+                const dateStr = data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : (window.i18n.lang === 'ko' ? '방금 전' : 'Just now');
                     
                     tr.innerHTML = `
                         <td>${idx--}</td>
                         <td class="title-cell" style="cursor:pointer; font-weight:600;">${data.isSecret ? '🔒 ' : ''}${data.title}</td>
                         <td>${data.author}</td>
                         <td>${dateStr}</td>
-                        <td>${category === 'qa' ? '<span class="status-tag">대기</span>' : '-'}</td>
+                        <td>${category === 'qa' ? `<span class="status-tag">${window.i18n.lang === 'ko' ? '대기' : 'Pending'}</span>` : '-'}</td>
                         <td>
                             <div class="action-btns">
-                                <button class="btn-edit-it" style="padding:4px 8px; font-size:11px; cursor:pointer;">수정</button>
-                                <button class="btn-delete-it" style="padding:4px 8px; font-size:11px; color:#ff3e00; cursor:pointer;">삭제</button>
+                                <button class="btn-edit-it" style="padding:4px 8px; font-size:11px; cursor:pointer;">${window.i18n.lang === 'ko' ? '수정' : 'Edit'}</button>
+                                <button class="btn-delete-it" style="padding:4px 8px; font-size:11px; color:#ff3e00; cursor:pointer;">${window.i18n.lang === 'ko' ? '삭제' : 'Delete'}</button>
                             </div>
                         </td>
                     `;
                     
                     tr.querySelector('.btn-edit-it').onclick = (e) => {
                         e.stopPropagation();
-                        const pw = prompt('수정을 위한 비밀번호를 입력하세요:');
+                        const pw = prompt(window.i18n.t('prompt-pw-edit'));
                         if (pw === data.password || pw === 'admin1234') {
                             editingId = d.id;
                             categoryInput.value = data.category;
@@ -225,42 +267,46 @@
                             passwordInput.value = data.password;
                             secretCheckbox.checked = data.isSecret;
                             
-                            modalTitle.innerText = '게시글 수정하기';
-                            submitBtn.innerText = '수정 완료';
+                            modalTitle.innerText = window.i18n.t('modal-edit-post');
+                            submitBtn.innerText = window.i18n.t('btn-edit-done');
                             writeModal.classList.add('active');
-                        } else showToast('비밀번호가 일치하지 않습니다.');
+                        } else showToast(window.i18n.t('toast-wrong-pw'));
                     };
 
                     tr.querySelector('.btn-delete-it').onclick = async (e) => {
                         e.stopPropagation();
-                        const pw = prompt('삭제 비밀번호:');
+                        const pw = prompt(window.i18n.t('prompt-pw-delete'));
                         if (pw === data.password || pw === 'admin1234') {
-                            if (confirm('게시글을 삭제하시겠습니까?')) {
-                                await deleteDoc(doc(db, "posts", d.id));
-                                showToast('성공적으로 삭제되었습니다.');
+                            if (confirm(window.i18n.t('confirm-delete'))) {
+                                await deleteDoc(doc(db, "posts", data.id));
+                                showToast(window.i18n.t('toast-deleted'));
                             }
-                        } else showToast('비밀번호가 틀렸습니다.');
+                        } else showToast(window.i18n.t('toast-wrong-pw'));
                     };
 
                     tr.querySelector('.title-cell').onclick = () => {
                         if (data.isSecret) {
-                            const pw = prompt('비밀글 확인용 비밀번호:');
-                            if (pw !== data.password && pw !== 'admin1234') return showToast('조회 권한이 없습니다.');
+                            const pw = prompt(window.i18n.t('prompt-pw-secret'));
+                            if (pw !== data.password && pw !== 'admin1234') return showToast(window.i18n.t('toast-wrong-pw'));
                         }
                         document.getElementById('view-title').innerText = data.title;
-                        document.getElementById('view-meta').innerText = `작성자: ${data.author} | 날짜: ${dateStr}`;
+                        document.getElementById('view-meta').innerText = `${window.i18n.lang === 'ko' ? '작성자' : 'Author'}: ${data.author} | ${window.i18n.lang === 'ko' ? '날짜' : 'Date'}: ${dateStr}`;
                         document.getElementById('view-content').innerText = data.content;
                         postViewer.classList.add('active');
                     };
                     boardList.appendChild(tr);
                 });
-            });
         }
 
         // --- Interaction Handlers ---
         document.querySelectorAll('.tab-btn').forEach(btn => {
+            // Set initial active state based on currentTab
+            if (btn.dataset.tab === currentTab) btn.classList.add('active');
+            else btn.classList.remove('active');
+
             btn.onclick = () => {
                 currentTab = btn.dataset.tab;
+                localStorage.setItem('lastBoardTab', currentTab);
                 document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 syncBoard(currentTab);
@@ -270,11 +316,25 @@
         document.getElementById('btn-open-write').onclick = () => {
             editingId = null;
             writeForm.reset();
-            modalTitle.innerText = '새 글 작성';
-            submitBtn.innerText = '등록하기';
+            modalTitle.innerText = window.i18n.t('modal-new-post');
+            submitBtn.innerText = window.i18n.t('btn-submit');
             categoryInput.value = currentTab;
             writeModal.classList.add('active');
         };
+
+        // --- Search Logic ---
+        const searchInput = document.getElementById('board-search');
+        if (searchInput) {
+            searchInput.oninput = (e) => {
+                const term = e.target.value.toLowerCase();
+                const rows = boardList.querySelectorAll('tr');
+                rows.forEach(row => {
+                    if (row.cells.length < 2) return;
+                    const text = row.innerText.toLowerCase();
+                    row.style.display = text.includes(term) ? '' : 'none';
+                });
+            };
+        }
 
         document.getElementById('btn-close-write').onclick = () => writeModal.classList.remove('active');
         document.querySelector('.btn-close-viewer').onclick = () => postViewer.classList.remove('active');
@@ -295,27 +355,32 @@
 
             const currentEditingId = editingId;
             writeModal.classList.remove('active');
-            showToast('서버와 동기화 중...');
+            showToast(window.i18n.t('toast-sync'));
 
             try {
                 if (currentEditingId) {
                     await updateDoc(doc(db, "posts", currentEditingId), postObj);
-                    showToast('성공적으로 수정 반영되었습니다.');
+                    showToast(window.i18n.t('toast-saved'));
                 } else {
                     postObj.createdAt = serverTimestamp();
                     await addDoc(collection(db, "posts"), postObj);
-                    showToast('성공적으로 등록 완료되었습니다.');
+                    showToast(window.i18n.t('toast-saved'));
                 }
                 editingId = null;
             } catch (err) {
                 console.error("Save error:", err);
-                showToast('반영 중 오류가 발생했습니다.');
+                showToast(window.i18n.t('toast-error'));
                 editingId = null;
             }
         };
 
+        // Listen for language changes to refresh board
+        window.addEventListener('languageChanged', () => {
+            syncBoard(currentTab);
+        });
+
         // Initial Load
-        syncBoard('notice');
+        syncBoard(currentTab);
     </script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,20 @@
     <!-- Google Fonts: Inter & Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
- </head>
+    <script src="i18n.js" defer></script>
+</head>
+
 <body>
     <header id="main-nav">
         <div class="container">
-            <a href="index.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none;"><div class="logo glitch" data-text="PHYSICAL AI">PHYSICAL AI</div></a>
-            
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo glitch" data-text="PHYSICAL AI">PHYSICAL AI</div>
+            </a>
+
             <!-- Mobile Menu Toggle -->
             <div class="menu-toggle" id="mobile-menu">
                 <span></span>
@@ -24,48 +31,106 @@
             </div>
 
             <ul class="nav-links" id="nav-list">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#technology">Technology</a></li>
-                <li><a href="community.html" target="_blank" rel="noopener noreferrer">Community</a></li>
-                <li><a href="#company">Company</a></li>
+                <li><a href="index.html" class="active" data-i18n="nav-home">Home</a></li>
+                <li><a href="#products" data-i18n="nav-products">Products</a></li>
+                <li><a href="#technology" data-i18n="nav-technology">Technology</a></li>
+                <li><a href="community.html" data-i18n="nav-community">Community</a></li>
+                <li><a href="#company" data-i18n="nav-company">Company</a></li>
+                <li class="lang-switch">
+                    <button id="lang-ko" class="lang-btn active">KO</button>
+                    <span class="divider">|</span>
+                    <button id="lang-en" class="lang-btn">EN</button>
+                </li>
             </ul>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Section 1: Hero - The Anti-Gravity Experience -->
         <section id="hero">
             <div class="container hero-content">
-                <h1 class="fade-in">Pioneering <span class="neon-text">Collaborative AI</span><br>Robotics Evolution.</h1>
-                <p class="subtitle fade-in-delay">정교한 제어 로직과 물리적 지능의 결합, 인간과 로봇이 공존하는 미래를 설계합니다.</p>
-                <div class="cta-group fade-in-delay">
-                    <a href="#roi-calc" class="btn-primary">ROI 분석 확인</a>
-                    <a href="#products" class="btn-secondary">Cobot Solution</a>
+                <div class="hero-image-wrapper reveal-up">
+                    <img src="hand_plus.png" alt="Allegro Hand" class="floating-hand">
+                </div>
+                <h1 class="reveal-up" data-i18n="hero-title">Gravity is just a suggestion.</h1>
+                <p class="subtitle reveal-up" data-i18n="hero-subtitle">물리적 한계를 벗어난 궁격의 움직임. 당신의 상상력을 현실로 이끌어낼 단 하나의 물리적
+                    지능을 만나보세요.</p>
+                <div class="cta-group reveal-up">
+                    <a href="#products" class="btn-primary" data-i18n="btn-discover">Discover the Specs</a>
+                    <a href="#" class="btn-secondary" data-i18n="btn-preorder">Pre-order Now</a>
                 </div>
             </div>
         </section>
 
-        <!-- ROI Visualization Section -->
-        <section id="roi-calc" class="container" style="padding: 6rem 0; border-top: 1px solid var(--border-color);">
-            <div class="section-header center">
-                <h2>ROI Analysis</h2>
-                <p>협동로봇 도입을 통한 생산성 향상 및 비용 절감 시뮬레이션</p>
+        <!-- Section 2: Feature - Zero-G Precision -->
+        <section id="zero-g" class="experience-section">
+            <div class="container" style="display: flex; align-items: center; gap: 4rem;">
+                <div style="flex: 1;" class="reveal-up">
+                    <h2 class="outfit" data-i18n="feat-zero-title" style="margin-bottom: 2rem;">Zero-G Precision. 무중력에
+                        가까운 부드러움.</h2>
+                    <p class="text-muted" data-i18n="feat-zero-desc" style="font-size: 1.15rem; line-height: 1.8;">
+                        1/1000초 단위로 반응하는 관절형 링크 메커니즘. 아무리 무거운 작업도, 아무리 미세한 조작도 마치 무중력 공간에서 이루어지듯 매끄럽고 완벽하게 통제됩니다.</p>
+                </div>
+                <div style="flex: 1;" class="reveal-up">
+                    <img src="hand_plus.png" alt="Actuator Detail"
+                        style="width: 100%; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1)); transform: rotate(-15deg);"
+                        class="parallax-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Intelligence - Sentient Touch -->
+        <section id="sentient" class="experience-section dark-mode">
+            <div class="container" style="text-align: center;">
+                <div class="reveal-up" style="margin-bottom: 5rem;">
+                    <img src="hand_plus.png" alt="Intelligence"
+                        style="width: 300px; filter: drop-shadow(0 0 50px var(--accent-neon));" class="floating-hand">
+                </div>
+                <div class="reveal-up">
+                    <h2 class="outfit neon-text" data-i18n="feat-sentient-title" style="margin-bottom: 2rem;">Sentient
+                        Touch. 스스로 인지하는 손끝.</h2>
+                    <p data-i18n="feat-sentient-desc"
+                        style="max-width: 800px; margin: 0 auto; font-size: 1.15rem; line-height: 1.8;">차가운 금속에 생명을 불어넣는
+                        푸른빛. 고정밀 촉각 센서와 근접 센서가 결합된 지능형 노드(Node)는 대상을 닿기도 전에 이해합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Expandability - Limitless Integration -->
+        <section id="limitless" class="experience-section">
+            <div class="container" style="display: flex; align-items: center; gap: 4rem; flex-direction: row-reverse;">
+                <div style="flex: 1;" class="reveal-up">
+                    <h2 class="outfit" data-i18n="feat-limitless-title" style="margin-bottom: 2rem;">Limitless
+                        Integration. 한계 없는 확장.</h2>
+                    <p class="text-muted" data-i18n="feat-limitless-desc" style="font-size: 1.15rem; line-height: 1.8;">
+                        표준화된 원형 마운트와 중앙 집중형 와이어링. 어떤 시스템, 어떤 코딩 환경과도 완벽하게 동기화됩니다. 연결되는 순간, 당신의 프로젝트는 진화할 것입니다.</p>
+                </div>
+                <div style="flex: 1;" class="reveal-up">
+                    <img src="hand_v5.png" alt="Integration" style="width: 100%; filter: grayscale(1) opacity(0.8);"
+                        class="parallax-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- ROI Analysis Section -->
+        <section id="roi-calc" class="container" style="padding: 10rem 0; border-top: 1px solid var(--border-color);">
+            <div class="section-header center reveal-up">
+                <h2 data-i18n="roi-title">ROI Analysis</h2>
+                <p data-i18n="roi-subtitle">협동로봇 도입을 통한 생산성 향상 및 비용 절감 시뮬레이션</p>
             </div>
             <div class="chart-container">
                 <canvas id="roiChart"></canvas>
             </div>
         </section>
-
         <!-- Products Section (Wonik-Inspired) -->
         <section id="products" class="product-showcase">
             <div class="overlay"></div>
             <div class="container relative">
                 <div class="section-header white">
-                    <h2>Advanced Dexterity</h2>
-                    <p>Physical AI의 정수, 알레그로 핸드 시리즈</p>
+                    <h2 data-i18n="prod-title">Advanced Dexterity</h2>
+                    <p data-i18n="prod-subtitle">Physical AI의 정수, 알레그로 핸드 시리즈</p>
                 </div>
-                
+
                 <div class="hand-grid">
                     <div class="hand-card animate-up">
                         <div class="card-img-wrapper">
@@ -78,11 +143,13 @@
                             <li><strong>Weight:</strong> 1.08 kg</li>
                             <li><strong>Comms:</strong> High-speed CAN Bus</li>
                         </ul>
-                        <p class="card-desc">Advancing embodied AI through touch perception and human-robot interaction.</p>
-                        <a href="#" class="btn-view-more">View more <span class="arrow">→</span></a>
+                        <p class="card-desc" data-i18n="card-hand-desc">Advancing embodied AI through touch perception
+                            and human-robot interaction.</p>
+                        <a href="#" class="btn-view-more" data-product="v4"><span data-i18n="btn-view-more">View
+                                more</span> <span class="arrow">→</span></a>
                     </div>
 
-                    <div class="hand-card animate-up" style="margin-top: 4rem;">
+                    <div class="hand-card animate-up">
                         <div class="card-img-wrapper">
                             <img src="hand_v5.png" alt="Touch Perception">
                         </div>
@@ -93,8 +160,63 @@
                             <li><strong>Logic:</strong> Torque Controlled</li>
                             <li><strong>Power:</strong> 24V DC / 100W Peak</li>
                         </ul>
-                        <p class="card-desc">Efficient data collection with high-fidelity tactile feedback for AI research.</p>
-                        <a href="#" class="btn-view-more">View more <span class="arrow">→</span></a>
+                        <p class="card-desc" data-i18n="card-touch-desc">Efficient data collection with high-fidelity
+                            tactile feedback for AI research.</p>
+                        <a href="#" class="btn-view-more" data-product="touch"><span data-i18n="btn-view-more">View
+                                more</span> <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Technology (Co-Bot Solution) -->
+        <section id="technology" class="experience-section"
+            style="background: var(--bg-secondary); scroll-margin-top: var(--nav-height);">
+            <div class="container">
+                <div class="section-header center reveal-up">
+                    <h2 class="outfit" data-i18n="tech-main-title">[Co-Bot Solution] Advanced Dexterous End-Effector
+                    </h2>
+                    <p class="text-muted" data-i18n="tech-main-subtitle" style="font-size: 1.2rem; margin-top: 1rem;">
+                        인간과의 안전한 공존, 그리고 한계 없는 유연성</p>
+                </div>
+
+                <div class="tech-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2.5rem; margin-top: 5rem;">
+                    <!-- Point 1 -->
+                    <div class="tech-item reveal-up"
+                        style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow);">
+                        <h3 class="outfit" data-i18n="tech-point-1-title"
+                            style="color: var(--accent-neon); margin-bottom: 1.5rem; font-size: 1.4rem;">1. 지능형 충돌 감지 및
+                            촉각 피드백</h3>
+                        <p data-i18n="tech-point-1-principle" style="margin-bottom: 1rem; line-height: 1.7;"></p>
+                        <p data-i18n="tech-point-1-role" style="color: var(--text-muted); line-height: 1.7;"></p>
+                    </div>
+                    <!-- Point 2 -->
+                    <div class="tech-item reveal-up"
+                        style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow);">
+                        <h3 class="outfit" data-i18n="tech-point-2-title"
+                            style="color: var(--accent-neon); margin-bottom: 1.5rem; font-size: 1.4rem;">2. 유연 파지
+                            (Adaptive Grasping)</h3>
+                        <p data-i18n="tech-point-2-principle" style="margin-bottom: 1rem; line-height: 1.7;"></p>
+                        <p data-i18n="tech-point-2-role" style="color: var(--text-muted); line-height: 1.7;"></p>
+                    </div>
+                    <!-- Point 3 -->
+                    <div class="tech-item reveal-up"
+                        style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow);">
+                        <h3 class="outfit" data-i18n="tech-point-3-title"
+                            style="color: var(--accent-neon); margin-bottom: 1.5rem; font-size: 1.4rem;">3. 정밀 힘 제어
+                            (Force/Torque Control)</h3>
+                        <p data-i18n="tech-point-3-principle" style="margin-bottom: 1rem; line-height: 1.7;"></p>
+                        <p data-i18n="tech-point-3-role" style="color: var(--text-muted); line-height: 1.7;"></p>
+                    </div>
+                    <!-- Point 4 -->
+                    <div class="tech-item reveal-up"
+                        style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow);">
+                        <h3 class="outfit" data-i18n="tech-point-4-title"
+                            style="color: var(--accent-neon); margin-bottom: 1.5rem; font-size: 1.4rem;">4. 개방형 아키텍처 및
+                            모듈형 인터페이스</h3>
+                        <p data-i18n="tech-point-4-principle" style="margin-bottom: 1rem; line-height: 1.7;"></p>
+                        <p data-i18n="tech-point-4-role" style="color: var(--text-muted); line-height: 1.7;"></p>
                     </div>
                 </div>
             </div>
@@ -103,9 +225,11 @@
         <!-- Community Redirect Section -->
         <section id="community-cta" class="container" style="padding: 6rem 0; text-align: center;">
             <div class="section-header center">
-                <h2>Join Our Community</h2>
-                <p>기술 지식과 아이디어를 공유하는 자유로운 소통 공간입니다.</p>
-                <a href="community.html" class="btn-neon" style="margin-top: 2rem; display: inline-block; padding: 1rem 3rem;">자유게시판 바로가기</a>
+                <h2 data-i18n="comm-title">Join Our Community</h2>
+                <p data-i18n="comm-subtitle">기술 지식과 아이디어를 공유하는 자유로운 소통 공간입니다.</p>
+                <a href="community.html" class="btn-neon"
+                    style="margin-top: 2rem; display: inline-block; padding: 1rem 3rem;" data-i18n="btn-goto-comm">자유게시판
+                    바로가기</a>
             </div>
         </section>
 
@@ -113,36 +237,58 @@
         <div id="product-modal" class="modal">
             <div class="modal-content product-detail-content">
                 <div class="modal-header">
-                    <h2 class="outfit">Allegro Hand V4</h2>
+                    <h2 class="outfit" id="modal-product-title">Allegro Hand V4</h2>
                     <button class="btn-close-modal" id="btn-close-product">×</button>
                 </div>
                 <div class="modal-body">
                     <div class="detail-headline">
-                        <p class="kor">"인간의 손길을 재현하는 고정밀 로봇 핸드"</p>
-                        <p class="eng">"The Standard for Dexterous Manipulation"</p>
+                        <p id="modal-product-headline">"인간의 손길을 재현하는 고정밀 로봇 핸드"</p>
                     </div>
-                    
+
                     <div class="detail-specs-grid">
-                        <div class="spec-item"><strong>자유도 (DOF)</strong><span>16개의 독립 관절</span></div>
-                        <div class="spec-item"><strong>가용 하중 (Payload)</strong><span class="highlight">5.0 kg</span></div>
-                        <div class="spec-item"><strong>무게 (Weight)</strong><span>1.08 kg</span></div>
-                        <div class="spec-item"><strong>통신 (Comms)</strong><span>고속 CAN 통신</span></div>
+                        <div class="spec-item"><strong data-i18n="spec-dof">자유도 (DOF)</strong><span
+                                data-i18n="spec-dof-val">16개의 독립 관절</span></div>
+                        <div class="spec-item"><strong data-i18n="spec-payload">가용 하중 (Payload)</strong><span
+                                class="highlight" data-i18n="spec-payload-val">5.0 kg</span></div>
+                        <div class="spec-item"><strong data-i18n="spec-weight">무게 (Weight)</strong><span
+                                data-i18n="spec-weight-val">1.08 kg</span></div>
+                        <div class="spec-item"><strong data-i18n="spec-comms">통신 (Comms)</strong><span
+                                data-i18n="spec-comms-val">고속 CAN 통신</span></div>
                     </div>
 
                     <div class="detail-description">
-                        <div class="desc-box kor">
-                            <h4>[국문 설명]</h4>
-                            <p>Allegro Hand V4는 고도의 촉각 인식과 인간-로봇 상호작용을 통해 <strong>실체화된 인공지능(Embodied AI)</strong>을 한 단계 더 진화시킵니다. 16개의 독립 관절을 통해 인간의 손과 유사한 정교한 움직임이 가능하며, 연구용부터 산업용 정밀 조작까지 폭폭넓은 활용 범위를 제공합니다.</p>
-                        </div>
-                        <div class="desc-box eng">
-                            <h4>[English Description]</h4>
-                            <p>Advancing embodied AI through touch perception and human-robot interaction. The Allegro Hand V4 offers 16 degrees of freedom, enabling precise and human-like dexterity for complex tasks and high-level robotics research.</p>
+                        <div class="desc-box" id="modal-product-desc">
+                            <div class="tech-detail-section">
+                                <h3>1. 하드웨어 및 구조적 특징</h3>
+                                <ul>
+                                    <li><strong>인간 공학적 5지(Five-finger) 구조:</strong> 인간의 손과 거의 유사한 자유도(DoF, Degrees of
+                                        Freedom)를 구현할 수 있도록 설계되었습니다. 물건을 쥐거나 미세한 작업을 수행할 때 인간의 손동작을 자연스럽게 모방합니다.</li>
+                                    <li><strong>관절형 링크 메커니즘 (Articulated Linkage):</strong> 손가락 마디마다 독립적이거나 정밀하게 연동되는 링크
+                                        구조가 노출되어 있습니다. 이는 고정된 형태가 아니라, 대상물의 형태에 맞춰 유연하게 변형되며 감싸 쥘 수 있는 적응형 파지(Adaptive
+                                        Grasping)가 가능함을 시사합니다.</li>
+                                    <li><strong>구동 및 와이어링 시스템:</strong> 손목 부분에 배치된 견고한 액추에이터와 손등/손가락으로 이어지는 정밀한 케이블 배선은
+                                        미세한 토크(Torque) 제어와 빠른 반응 속도를 동시에 확보한 구조입니다.</li>
+                                </ul>
+
+                                <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border-color);">
+
+                                <h3>2. 핵심 기술적 포인트 (슬로건과의 연결성)</h3>
+                                <ul>
+                                    <li><strong>손끝의 블루 LED 센서 (물리적 지능 - Physical Intelligence):</strong> 가장 눈에 띄는 부분은 다섯
+                                        손가락 끝에서 빛나는 푸른색 조명입니다. 이는 로봇이 외부 환경을 인식하는 핵심 센서부를 시사합니다.</li>
+                                    <li><strong>촉각 센서 (Tactile Sensor):</strong> 물체에 닿는 압력, 마찰력, 표면의 질감을 실시간으로 감지하여 물체를
+                                        떨어뜨리지 않고 완벽한 힘으로 쥐게 합니다.</li>
+                                    <li><strong>근접/광학 센서 (Proximity/Optical Sensor):</strong> 물체에 닿기 직전 거리와 위치를 정밀하게
+                                        측정합니다.</li>
+                                    <li><strong>손목의 액추에이터 및 제어 모듈 (정교한 제어 로직):</strong> 손목 하단부의 프레임에는 소형 고출력 모터와 함께 제어
+                                        보드가 집약되어 있습니다. 센서로부터 들어오는 방대한 데이터를 실시간으로 연산하여 각 관절의 각도와 힘을 1/1000초 단위로 미세 조정하는
+                                        제어 로직이 탑재되어 있습니다.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn-primary" onclick="alert('문의가 접수되었습니다.')">Contact for Inquiry</button>
-                </div>
+                <!-- Inquiry button removed per user request -->
             </div>
         </div>
     </main>
@@ -152,7 +298,7 @@
             <div class="footer-content">
                 <div class="footer-logo">PHYSICAL AI</div>
                 <div class="footer-info">
-                    <p>© 2026 Physical AI Co., Ltd. All rights reserved.</p>
+                    <p data-i18n="footer-rights">© 2026 Physical AI Co., Ltd. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -201,4 +347,5 @@
     </script>
     <script type="module" src="main.js"></script>
 </body>
+
 </html>

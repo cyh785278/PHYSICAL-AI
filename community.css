@@ -21,10 +21,17 @@
 /* Tab Menu */
 .tab-menu {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1rem;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tab-menu::-webkit-scrollbar {
+    display: none;
 }
 
 .tab-btn {
@@ -223,9 +230,9 @@
 
 .modal-content {
     background: white;
-    width: 90%;
+    width: 95%;
     max-width: 800px;
-    padding: 3rem;
+    padding: 2.5rem 1.5rem;
     border-radius: 12px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.2);
 }
@@ -288,15 +295,27 @@
     .board-table th:nth-child(1),
     .board-table td:nth-child(1),
     .board-table th:nth-child(4),
-    .board-table td:nth-child(4) {
+    .board-table td:nth-child(4),
+    .board-table th:nth-child(5),
+    .board-table td:nth-child(5) {
         display: none;
+    }
+
+    .board-table th, .board-table td {
+        padding: 1rem 0.8rem;
+        font-size: 0.9rem;
     }
     
     .board-controls {
         flex-direction: column;
         gap: 1rem;
+        padding: 1rem;
     }
     
+    .search-box {
+        width: 100%;
+    }
+
     .search-box input {
         width: 100%;
     }
